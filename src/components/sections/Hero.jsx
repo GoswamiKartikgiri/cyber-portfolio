@@ -118,23 +118,39 @@ function Hero() {
 
           <div className="flex flex-wrap gap-5 mt-10">
 
-            <a
-              href="#projects"
-              className="bg-cyan-400 hover:bg-cyan-300 hover:scale-105 transition-all duration-300 px-7 py-4 rounded-xl text-black font-semibold flex items-center gap-3 shadow-lg shadow-cyan-400/30"
-            >
-              View Projects
-              <FaArrowRight />
-            </a>
+  {/* View Projects */}
 
-            <a
-              href="/resume.pdf"
-              className="border border-cyan-400 hover:bg-cyan-400 hover:text-black hover:scale-105 transition-all duration-300 px-7 py-4 rounded-xl text-cyan-400 font-semibold flex items-center gap-3"
-            >
-              <FaDownload />
-              Download Resume
-            </a>
+  <a
+    href="#projects"
+    className="bg-cyan-400 hover:bg-cyan-300 hover:scale-105 transition-all duration-300 px-7 py-4 rounded-xl text-black font-semibold flex items-center gap-3 shadow-lg shadow-cyan-400/30"
+  >
+    View Projects
+    <FaArrowRight />
+  </a>
 
-          </div>
+  {/* View Resume */}
+
+  <a
+    href="/resume.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="border border-cyan-400 hover:bg-cyan-400 hover:text-black hover:scale-105 transition-all duration-300 px-7 py-4 rounded-xl text-cyan-400 font-semibold flex items-center gap-3"
+  >
+    📄 View Resume
+  </a>
+
+  {/* Download Resume */}
+
+  <a
+    href="/resume.pdf"
+    download="Kartik_Giri_Resume.pdf"
+    className="bg-white/10 border border-cyan-400 hover:bg-cyan-400 hover:text-black hover:scale-105 transition-all duration-300 px-7 py-4 rounded-xl text-cyan-400 font-semibold flex items-center gap-3"
+  >
+    <FaDownload />
+    Download Resume
+  </a>
+
+</div>
 
           {/* Social Icons */}
 
