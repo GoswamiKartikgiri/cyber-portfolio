@@ -6,18 +6,9 @@ const projects = [
 
     subtitle: "Automated Daily Cybersecurity Job Finder",
 
-    image: "/projects/job-agent.png",
-
-    screenshots: [
-      "/projects/job-agent/ss1.png",
-      "/projects/job-agent/ss2.png",
-      "/projects/job-agent/ss3.png",
-      "/projects/job-agent/ss4.png",
-    ],
-
     status: "Completed",
 
-    badge: "🤖 Security Automation",
+    badge: "🤖 Automation",
 
     difficulty: "★★★★★",
 
@@ -28,32 +19,37 @@ const projects = [
     level: "Advanced",
 
     highlight:
-      "Developed an automated cybersecurity job aggregation system that collects jobs from multiple platforms, filters duplicate listings, and delivers daily email reports.",
+      "Built an intelligent automation system that collects cybersecurity jobs from multiple websites, removes duplicate listings, filters relevant positions, and sends daily email reports automatically.",
 
     description:
-      "An intelligent automation tool that searches cybersecurity jobs from multiple platforms, filters relevant roles, removes duplicates, and sends daily email notifications.",
+      "A Python automation project that continuously searches cybersecurity jobs from multiple sources, processes the data, removes duplicates, and generates daily reports for job seekers.",
 
     tech: [
       "Python",
       "Selenium",
       "BeautifulSoup",
-      "Requests",
       "Pandas",
       "SMTP",
+      "Requests",
     ],
 
     features: [
       "Automated Job Search",
-      "Email Notifications",
-      "Smart Filtering",
       "Duplicate Removal",
-      "CSV Report Generation",
+      "Keyword Filtering",
+      "Daily Email Alerts",
+      "CSV Export",
     ],
 
     github:
       "https://github.com/goswamikartikgiri8-web/CyberSecurityJobAgent",
 
-    demo: "",
+    screenshots: [
+      "/projects/job-agent/ss1.png",
+      "/projects/job-agent/ss2.png",
+      "/projects/job-agent/ss3.png",
+      "/projects/job-agent/ss4.png",
+    ],
   },
 
   {
@@ -61,23 +57,11 @@ const projects = [
 
     title: "Advanced Packet Sniffer",
 
-    subtitle: "Python & Scapy Network Analyzer",
-
-    image: "/projects/packet-sniffer.png",
-
-    screenshots: [
-      "/projects/packet-sniffer/ss1.png",
-      "/projects/packet-sniffer/ss2.png",
-      "/projects/packet-sniffer/ss3.png",
-      "/projects/packet-sniffer/ss4.png",
-      "/projects/packet-sniffer/ss5.png",
-      "/projects/packet-sniffer/ss6.png",
-      "/projects/packet-sniffer/ss7.png",
-    ],
+    subtitle: "Python + Scapy Network Analyzer",
 
     status: "Completed",
 
-    badge: "📡 Network Analysis",
+    badge: "📡 Networking",
 
     difficulty: "★★★★☆",
 
@@ -88,31 +72,39 @@ const projects = [
     level: "Intermediate",
 
     highlight:
-      "Built from scratch using Python and Scapy to capture live packets, analyze protocols, generate statistics, and export network logs for security analysis.",
+      "Developed a real-time packet sniffer capable of capturing, analyzing, and logging TCP, UDP, ICMP, and IP traffic using Python and Scapy.",
 
     description:
-      "A Python-based packet sniffer that captures and analyzes live network traffic using Scapy. It identifies protocols, records packet information, and provides real-time traffic statistics.",
+      "A desktop packet analyzer built with Python that captures live packets, identifies protocols, records statistics, and exports logs for cybersecurity analysis.",
 
     tech: [
       "Python",
       "Scapy",
       "Socket",
-      "Networking",
       "Tkinter",
+      "Networking",
     ],
 
     features: [
       "Live Packet Capture",
-      "TCP / UDP / ICMP Detection",
-      "Packet Statistics",
-      "Traffic Logging",
-      "Real-Time Analysis",
+      "Protocol Detection",
+      "Traffic Statistics",
+      "Packet Logging",
+      "Real-time Monitoring",
     ],
 
     github:
       "https://github.com/GoswamiKartikgiri/network-packet-sniffer",
 
-    demo: "",
+    screenshots: [
+      "/projects/packet-sniffer/ss1.png",
+      "/projects/packet-sniffer/ss2.png",
+      "/projects/packet-sniffer/ss3.png",
+      "/projects/packet-sniffer/ss4.png",
+      "/projects/packet-sniffer/ss5.png",
+      "/projects/packet-sniffer/ss6.png",
+      "/projects/packet-sniffer/ss7.png",
+    ],
   },
 
   {
@@ -122,21 +114,9 @@ const projects = [
 
     subtitle: "Authentication & Identity Security",
 
-    image: "/projects/mfa.png",
-
-    screenshots: [
-      "/projects/mfa/ss1.png",
-      "/projects/mfa/ss2.png",
-      "/projects/mfa/ss3.png",
-      "/projects/mfa/ss4.png",
-      "/projects/mfa/ss5.png",
-      "/projects/mfa/ss6.png",
-      "/projects/mfa/ss7.png",
-    ],
-
     status: "Completed",
 
-    badge: "🔐 Identity Security",
+    badge: "🔐 Authentication",
 
     difficulty: "★★★★★",
 
@@ -147,10 +127,10 @@ const projects = [
     level: "Advanced",
 
     highlight:
-      "Implemented a secure authentication workflow using Time-based One-Time Passwords (TOTP), encrypted passwords, QR code enrollment, and secure session management.",
+      "Implemented a secure authentication workflow using TOTP, encrypted passwords, QR-code enrollment, and secure session management.",
 
     description:
-      "A secure authentication system implementing Time-based One-Time Passwords (TOTP) to strengthen account security through multi-factor authentication.",
+      "A Flask-based authentication platform that strengthens user security through Time-based One-Time Password (TOTP) verification and encrypted credentials.",
 
     tech: [
       "Python",
@@ -162,18 +142,26 @@ const projects = [
     ],
 
     features: [
-      "User Registration",
       "Secure Login",
-      "QR Code Setup",
-      "TOTP Authentication",
       "Password Hashing",
+      "QR Code Enrollment",
+      "TOTP Authentication",
       "Secure Sessions",
+      "SQLite Database",
     ],
 
     github:
       "https://github.com/GoswamiKartikgiri/Secure-Multi-Factor-Authentication-System",
 
-    demo: "",
+    screenshots: [
+      "/projects/mfa/ss1.png",
+      "/projects/mfa/ss2.png",
+      "/projects/mfa/ss3.png",
+      "/projects/mfa/ss4.png",
+      "/projects/mfa/ss5.png",
+      "/projects/mfa/ss6.png",
+      "/projects/mfa/ss7.png",
+    ],
   },
 ];
 

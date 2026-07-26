@@ -15,7 +15,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 30);
+      setScrolled(window.scrollY > 20);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -27,28 +27,44 @@ function Navbar() {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#050816]/80 backdrop-blur-xl border-b border-cyan-400/10 shadow-lg"
+          ? "bg-[#050816]/90 backdrop-blur-xl border-b border-cyan-500/10 shadow-xl"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-16">
 
-        <div className="flex items-center justify-between h-20">
+        <div className="flex justify-between items-center h-20">
 
           {/* Logo */}
 
           <a
             href="#home"
-            className="flex items-center gap-3 text-2xl font-bold"
+            className="flex items-center gap-3 group"
           >
-            <div className="w-10 h-10 rounded-xl bg-cyan-400 flex items-center justify-center text-black">
+
+            <div className="w-11 h-11 rounded-xl bg-cyan-400 text-black flex items-center justify-center group-hover:rotate-12 transition">
+
               <Shield size={22} />
+
             </div>
 
-            <span>
-              Kartik
-              <span className="text-cyan-400">.</span>
-            </span>
+            <div>
+
+              <h2 className="text-xl font-bold">
+
+                Kartik
+                <span className="text-cyan-400">.</span>
+
+              </h2>
+
+              <p className="text-xs text-gray-400">
+
+                Cyber Security
+
+              </p>
+
+            </div>
+
           </a>
 
           {/* Desktop Menu */}
@@ -56,35 +72,49 @@ function Navbar() {
           <nav className="hidden lg:flex items-center gap-10">
 
             {navLinks.map((link) => (
+
               <a
                 key={link.name}
                 href={link.href}
-                className="relative text-gray-300 hover:text-cyan-400 transition group"
+                className="relative text-gray-300 hover:text-cyan-400 font-medium transition group"
               >
+
                 {link.name}
 
                 <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-cyan-400 transition-all duration-300 group-hover:w-full"></span>
+
               </a>
+
             ))}
 
           </nav>
 
-          {/* Resume Button */}
+          {/* Resume */}
 
           <a
             href="/resume.pdf"
-            className="hidden lg:flex px-5 py-3 rounded-xl bg-cyan-400 text-black font-semibold hover:scale-105 transition"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden lg:flex items-center px-6 py-3 rounded-xl bg-cyan-400 text-black font-bold hover:bg-cyan-300 hover:scale-105 transition"
           >
+
             Resume
+
           </a>
 
-          {/* Mobile Button */}
+          {/* Mobile */}
 
           <button
-            className="lg:hidden text-white"
             onClick={() => setMenuOpen(!menuOpen)}
+            className="lg:hidden"
           >
-            {menuOpen ? <X size={28} /> : <Menu size={28} />}
+
+            {menuOpen ? (
+              <X size={30} />
+            ) : (
+              <Menu size={30} />
+            )}
+
           </button>
 
         </div>
@@ -95,7 +125,7 @@ function Navbar() {
 
       {menuOpen && (
 
-        <div className="lg:hidden bg-[#0A0F1F]/95 backdrop-blur-xl border-t border-cyan-400/10">
+        <div className="lg:hidden bg-[#08111f]/95 backdrop-blur-xl border-t border-cyan-500/10">
 
           <div className="flex flex-col py-6">
 
@@ -105,18 +135,25 @@ function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => setMenuOpen(false)}
-                className="px-8 py-4 text-gray-300 hover:text-cyan-400 hover:bg-cyan-400/10 transition"
+                className="px-8 py-4 text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition"
               >
+
                 {link.name}
+
               </a>
 
             ))}
 
             <a
               href="/resume.pdf"
-              className="mx-8 mt-5 py-3 rounded-xl bg-cyan-400 text-black text-center font-semibold"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="mx-8 mt-6 py-3 rounded-xl bg-cyan-400 text-black font-bold text-center hover:bg-cyan-300 transition"
             >
-              Download Resume
+
+              View Resume
+
             </a>
 
           </div>

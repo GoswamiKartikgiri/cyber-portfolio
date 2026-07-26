@@ -6,6 +6,9 @@ import {
   FaMapMarkerAlt,
   FaGraduationCap,
   FaCircle,
+  FaShieldAlt,
+  FaGithub,
+  FaLinkedin,
 } from "react-icons/fa";
 
 import SocialIcons from "../ui/SocialIcons";
@@ -21,63 +24,74 @@ function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
 
-        {/* ================= LEFT SIDE ================= */}
+        {/* ================= LEFT ================= */}
 
         <motion.div
-          initial={{ opacity: 0, x: -60 }}
+          initial={{ opacity: 0, x: -80 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
 
-          {/* Availability */}
+          {/* Status Badge */}
 
-          <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 px-5 py-2 rounded-full mb-6 shadow-lg shadow-green-500/10">
-
+          <motion.div
+            initial={{ opacity: 0, y: -15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="inline-flex items-center gap-3 px-5 py-2 rounded-full border border-green-500/30 bg-green-500/10 backdrop-blur-lg"
+          >
             <FaCircle className="text-green-400 text-[10px] animate-pulse" />
 
-            <span className="text-green-300 text-sm font-semibold tracking-wide">
+            <span className="text-green-300 font-medium text-sm tracking-wide">
               Open to Cybersecurity Opportunities
             </span>
+          </motion.div>
 
-          </div>
+          {/* Greeting */}
 
-          <p className="text-cyan-400 text-lg mb-3">
+          <p className="text-cyan-400 text-lg mt-8">
             👋 Hello, I'm
           </p>
 
-          <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+          {/* Name */}
 
-            Kartik <span className="text-cyan-400">Giri</span>
+          <h1 className="text-5xl lg:text-7xl font-black mt-2 leading-tight">
+
+            Kartik
+
+            <br />
+
+            <span className="text-cyan-400">
+              Giri
+            </span>
 
           </h1>
 
-          {/* Typing */}
+          {/* Animated Title */}
 
-          <div className="mt-6 h-12 flex items-center">
+          <div className="h-14 mt-7">
 
-            <h2 className="text-2xl lg:text-3xl font-semibold">
-
-              <TypeAnimation
-                sequence={[
-                  "Cyber Security Student",
-                  2000,
-                  "SOC Analyst",
-                  2000,
-                  "Digital Forensics",
-                  2000,
-                  "Network Security",
-                  2000,
-                  "Incident Response",
-                  2000,
-                ]}
-                wrapper="span"
-                speed={50}
-                repeat={Infinity}
-                cursor={true}
-                className="text-cyan-400"
-              />
-
-            </h2>
+            <TypeAnimation
+              sequence={[
+                "Cyber Security Student",
+                1800,
+                "SOC Analyst",
+                1800,
+                "Digital Forensics",
+                1800,
+                "Network Security",
+                1800,
+                "Incident Response",
+                1800,
+                "Vulnerability Assessment",
+                1800,
+              ]}
+              wrapper="span"
+              cursor={true}
+              repeat={Infinity}
+              speed={55}
+              className="text-2xl lg:text-3xl font-semibold text-cyan-400"
+            />
 
           </div>
 
@@ -85,30 +99,45 @@ function Hero() {
 
           <p className="mt-8 text-gray-400 leading-8 text-lg max-w-xl">
 
-            Passionate about cybersecurity, vulnerability assessment,
-            digital forensics, network security, and building practical
-            security solutions through hands-on projects and continuous
-            learning.
+            Passionate cybersecurity student focused on building practical,
+            recruiter-ready security projects. My interests include
+            network security, SOC operations, vulnerability assessment,
+            digital forensics, authentication systems, and security
+            automation using Python.
 
           </p>
 
           {/* Quick Info */}
 
-          <div className="mt-8 space-y-4">
+          <div className="mt-10 space-y-5">
 
-            <div className="flex items-center gap-3 text-gray-300">
+            <div className="flex items-center gap-4">
 
-              <FaMapMarkerAlt className="text-cyan-400" />
+              <FaMapMarkerAlt className="text-cyan-400 text-lg" />
 
-              <span>Gujarat, India</span>
+              <span className="text-gray-300">
+                Gujarat, India
+              </span>
 
             </div>
 
-            <div className="flex items-center gap-3 text-gray-300">
+            <div className="flex items-center gap-4">
 
-              <FaGraduationCap className="text-cyan-400" />
+              <FaGraduationCap className="text-cyan-400 text-lg" />
 
-              <span>M.Sc. Cyber Security & Digital Forensics</span>
+              <span className="text-gray-300">
+                M.Sc. Cyber Security & Digital Forensics
+              </span>
+
+            </div>
+
+            <div className="flex items-center gap-4">
+
+              <FaShieldAlt className="text-cyan-400 text-lg" />
+
+              <span className="text-gray-300">
+                Building Real-World Cybersecurity Projects
+              </span>
 
             </div>
 
@@ -118,101 +147,116 @@ function Hero() {
 
           <div className="flex flex-wrap gap-5 mt-10">
 
-  {/* View Projects */}
+            <a
+              href="#projects"
+              className="group bg-cyan-400 text-black font-bold px-7 py-4 rounded-xl hover:bg-cyan-300 transition duration-300 flex items-center gap-3 shadow-lg shadow-cyan-400/20"
+            >
+              View Projects
 
-  <a
-    href="#projects"
-    className="bg-cyan-400 hover:bg-cyan-300 hover:scale-105 transition-all duration-300 px-7 py-4 rounded-xl text-black font-semibold flex items-center gap-3 shadow-lg shadow-cyan-400/30"
-  >
-    View Projects
-    <FaArrowRight />
-  </a>
+              <FaArrowRight className="group-hover:translate-x-1 transition" />
+            </a>
 
-  {/* View Resume */}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-cyan-400 text-cyan-400 font-semibold px-7 py-4 rounded-xl hover:bg-cyan-400 hover:text-black transition duration-300"
+            >
+              View Resume
+            </a>
 
-  <a
-    href="/resume.pdf"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="border border-cyan-400 hover:bg-cyan-400 hover:text-black hover:scale-105 transition-all duration-300 px-7 py-4 rounded-xl text-cyan-400 font-semibold flex items-center gap-3"
-  >
-    📄 View Resume
-  </a>
+            <a
+              href="/resume.pdf"
+              download="Kartik_Giri_Resume.pdf"
+              className="border border-white/20 bg-white/5 px-7 py-4 rounded-xl hover:border-cyan-400 hover:text-cyan-400 transition flex items-center gap-3"
+            >
+              <FaDownload />
 
-  {/* Download Resume */}
-
-  <a
-    href="/resume.pdf"
-    download="Kartik_Giri_Resume.pdf"
-    className="bg-white/10 border border-cyan-400 hover:bg-cyan-400 hover:text-black hover:scale-105 transition-all duration-300 px-7 py-4 rounded-xl text-cyan-400 font-semibold flex items-center gap-3"
-  >
-    <FaDownload />
-    Download Resume
-  </a>
-
-</div>
-
-          {/* Social Icons */}
-
-          <div className="mt-8">
-
-            <SocialIcons />
+              Download
+            </a>
 
           </div>
 
-          {/* Stats */}
+          <div className="mt-10">
+            <SocialIcons />
+          </div>
+                    {/* Stats */}
 
           <div className="grid grid-cols-3 gap-5 mt-14">
 
             <motion.div
-              whileHover={{ y: -8 }}
-              className="bg-white/5 backdrop-blur-lg border border-cyan-400/20 rounded-2xl p-5 text-center"
+              whileHover={{ y: -8, scale: 1.03 }}
+              className="bg-white/5 backdrop-blur-xl border border-cyan-400/20 rounded-2xl p-5 text-center"
             >
-              <h2 className="text-3xl font-bold text-cyan-400">4+</h2>
-              <p className="text-gray-400 mt-2">Projects</p>
+              <h2 className="text-3xl font-bold text-cyan-400">
+                4+
+              </h2>
+
+              <p className="text-gray-400 mt-2">
+                Projects
+              </p>
+
             </motion.div>
 
             <motion.div
-              whileHover={{ y: -8 }}
-              className="bg-white/5 backdrop-blur-lg border border-cyan-400/20 rounded-2xl p-5 text-center"
+              whileHover={{ y: -8, scale: 1.03 }}
+              className="bg-white/5 backdrop-blur-xl border border-cyan-400/20 rounded-2xl p-5 text-center"
             >
-              <h2 className="text-3xl font-bold text-cyan-400">15+</h2>
-              <p className="text-gray-400 mt-2">Certificates</p>
+              <h2 className="text-3xl font-bold text-cyan-400">
+                15+
+              </h2>
+
+              <p className="text-gray-400 mt-2">
+                Certificates
+              </p>
+
             </motion.div>
 
             <motion.div
-              whileHover={{ y: -8 }}
-              className="bg-white/5 backdrop-blur-lg border border-cyan-400/20 rounded-2xl p-5 text-center"
+              whileHover={{ y: -8, scale: 1.03 }}
+              className="bg-white/5 backdrop-blur-xl border border-cyan-400/20 rounded-2xl p-5 text-center"
             >
-              <h2 className="text-3xl font-bold text-cyan-400">10+</h2>
-              <p className="text-gray-400 mt-2">Security Tools</p>
+              <h2 className="text-3xl font-bold text-cyan-400">
+                10+
+              </h2>
+
+              <p className="text-gray-400 mt-2">
+                Security Tools
+              </p>
+
             </motion.div>
 
           </div>
 
         </motion.div>
 
-        {/* ================= RIGHT SIDE STARTS HERE ================= */}
-                <motion.div
-          initial={{ opacity: 0, x: 60 }}
+        {/* ================= RIGHT SIDE ================= */}
+
+        <motion.div
+          initial={{ opacity: 0, x: 70 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.9 }}
           className="flex justify-center items-center"
         >
+
           <div className="relative">
 
-            {/* Animated Rotating Glow */}
-            <div className="absolute -inset-6 rounded-[40px] bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 opacity-40 blur-2xl animate-spin-slow"></div>
+            {/* Glow */}
 
-            {/* Glass Background */}
-            <div className="absolute inset-0 rounded-[32px] bg-white/5 backdrop-blur-md border border-cyan-400/20"></div>
+            <div className="absolute -inset-6 rounded-[40px] bg-gradient-to-r from-cyan-400 via-blue-500 to-cyan-400 blur-3xl opacity-40 animate-spin-slow"></div>
 
-            {/* Decorative Glow */}
-            <div className="absolute -top-6 -left-6 w-10 h-10 bg-cyan-400 rounded-full blur-xl opacity-70 animate-pulse"></div>
+            {/* Glass */}
 
-            <div className="absolute -bottom-6 -right-6 w-10 h-10 bg-blue-500 rounded-full blur-xl opacity-70 animate-pulse"></div>
+            <div className="absolute inset-0 rounded-[34px] bg-white/5 backdrop-blur-xl border border-cyan-400/20"></div>
 
-            {/* Floating Profile Image */}
+            {/* Floating Dots */}
+
+            <div className="absolute -top-5 -left-5 w-8 h-8 rounded-full bg-cyan-400 blur-xl opacity-80 animate-pulse"></div>
+
+            <div className="absolute -bottom-5 -right-5 w-8 h-8 rounded-full bg-blue-500 blur-xl opacity-80 animate-pulse"></div>
+
+            {/* Image */}
+
             <motion.img
               src="/Kartik.png"
               alt="Kartik Giri"
@@ -225,48 +269,152 @@ function Hero() {
                 ease: "easeInOut",
               }}
               whileHover={{
-                scale: 1.04,
+                scale: 1.03,
                 rotate: 1,
               }}
-              className="relative w-[360px] sm:w-[400px] lg:w-[460px] rounded-[30px] border-4 border-cyan-400 shadow-[0_0_60px_rgba(34,211,238,0.45)] transition-all duration-500"
+              className="relative w-[360px] sm:w-[400px] lg:w-[470px] rounded-[30px] border-4 border-cyan-400 shadow-[0_0_70px_rgba(34,211,238,.45)]"
             />
 
-            {/* Floating Cyber Badges */}
+            {/* Security */}
 
             <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 3, repeat: Infinity }}
-              className="absolute top-8 -left-10 bg-[#0B1220]/90 backdrop-blur-md border border-cyan-400/20 rounded-xl px-4 py-3 shadow-xl"
+              animate={{
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+              }}
+              className="absolute top-6 -left-10 bg-[#0B1220]/95 backdrop-blur-xl border border-cyan-400/20 rounded-xl px-5 py-3 shadow-xl"
             >
-              <p className="text-cyan-400 font-semibold text-sm">
+
+              <p className="text-cyan-400 font-semibold">
                 🔒 Security
               </p>
+
+              <span className="text-xs text-gray-400">
+                Secure Development
+              </span>
+
             </motion.div>
 
+            {/* SOC */}
+
             <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 4, repeat: Infinity }}
-              className="absolute bottom-12 -right-10 bg-[#0B1220]/90 backdrop-blur-md border border-cyan-400/20 rounded-xl px-4 py-3 shadow-xl"
+              animate={{
+                y: [0, 10, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+              }}
+              className="absolute bottom-10 -right-10 bg-[#0B1220]/95 backdrop-blur-xl border border-cyan-400/20 rounded-xl px-5 py-3 shadow-xl"
             >
-              <p className="text-cyan-400 font-semibold text-sm">
+
+              <p className="text-cyan-400 font-semibold">
                 🛡️ SOC
               </p>
+
+              <span className="text-xs text-gray-400">
+                Blue Team
+              </span>
+
             </motion.div>
+
+            {/* Network */}
 
             <motion.div
-              animate={{ x: [0, 8, 0] }}
-              transition={{ duration: 5, repeat: Infinity }}
-              className="absolute top-1/2 -right-14 bg-[#0B1220]/90 backdrop-blur-md border border-cyan-400/20 rounded-xl px-4 py-3 shadow-xl"
+              animate={{
+                x: [0, 8, 0],
+              }}
+              transition={{
+                duration: 5,
+                repeat: Infinity,
+              }}
+              className="absolute top-1/2 -right-14 bg-[#0B1220]/95 backdrop-blur-xl border border-cyan-400/20 rounded-xl px-5 py-3 shadow-xl"
             >
-              <p className="text-cyan-400 font-semibold text-sm">
+
+              <p className="text-cyan-400 font-semibold">
                 🌐 Network
               </p>
+
+              <span className="text-xs text-gray-400">
+                Traffic Analysis
+              </span>
+
             </motion.div>
 
-          </div>
+            {/* GitHub */}
+
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="absolute bottom-5 left-5"
+            >
+
+              <a
+                href="https://github.com/GoswamiKartikgiri"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 rounded-full bg-black/70 backdrop-blur-xl border border-cyan-400/20 flex items-center justify-center text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
+              >
+                <FaGithub size={24} />
+              </a>
+
+            </motion.div>
+
+            {/* LinkedIn */}
+
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="absolute top-5 right-5"
+            >
+
+              <a
+                href="https://www.linkedin.com/in/goswami-kartikgiri/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-14 h-14 rounded-full bg-black/70 backdrop-blur-xl border border-cyan-400/20 flex items-center justify-center text-cyan-400 hover:bg-cyan-400 hover:text-black transition"
+              >
+                <FaLinkedin size={22} />
+              </a>
+
+            </motion.div>
+                      </div>
+
         </motion.div>
 
       </div>
+
+      {/* Background Decorations */}
+
+      <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+
+        <motion.div
+          animate={{
+            x: [0, 40, 0],
+            y: [0, -30, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+          }}
+          className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/10 rounded-full blur-[120px]"
+        />
+
+        <motion.div
+          animate={{
+            x: [0, -50, 0],
+            y: [0, 40, 0],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+          }}
+          className="absolute bottom-20 right-10 w-80 h-80 bg-blue-500/10 rounded-full blur-[140px]"
+        />
+
+      </div>
+
     </section>
   );
 }
